@@ -1,3 +1,6 @@
-from django.urls import path, include
+from django.urls import include, path
+from opportuna.views import PostingViewSet
 
-url_patterns = [path('post/', include())]
+urlpatterns = [
+    path('posting/', PostingViewSet.as_view({"get":"get_job_postings"}), name="get_job_posting_api_view")
+]
